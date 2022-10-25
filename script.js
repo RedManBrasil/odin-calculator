@@ -47,7 +47,7 @@ numbers_btns.forEach(function(event){
 dotIsSelected = false;
 const dot_op = document.querySelector('#dot-operator'); 
 dot_op.addEventListener("click", (a) => { //when the Dot Button is pressed
-        if (calculator_display == "⠀" || calculator_display == ""){
+        if (calculator_display == ""){
             calculator_display = "0.";
             document.querySelector('.calculator-display').innerText = calculator_display;
             dotIsSelected = true;
@@ -112,4 +112,19 @@ clear_op.addEventListener("click", (a) => { //when the Clear Button is pressed
         equalIsSelected = false;
         dotIsSelected = false;
         dot_op.style.cssText = "visibility: visible;";
+    });
+
+const del_op = document.querySelector('#delete-operator'); 
+del_op.addEventListener("click", (a) => { //when the Delete Button is pressed
+        if (calculator_display.length > 1){
+            if (calculator_display.substring(calculator_display.length - 1, calculator_display.length) == "."){
+                dotIsSelected = false;
+                dot_op.style.cssText = "visibility: visible;";
+            }
+            calculator_display = calculator_display.substring(0, calculator_display.length - 1);
+            document.querySelector('.calculator-display').innerText = calculator_display;
+        } else{
+            calculator_display = ""; //when deleting the last number, the display comeback to blank
+            document.querySelector('.calculator-display').innerText = "⠀";
+        }
     });
