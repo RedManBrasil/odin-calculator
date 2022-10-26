@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 35% 0 35%;
+    margin: 0 30vw 0 30vw;
 }
 
 .display{
@@ -12,4 +12,33 @@
     width: 100%;
     padding: 5px 25px 5px 25px;
     margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.important-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.important-buttons > div > button{
+    padding: 4vw;
+    font-size: 2vw;
+}
+
+.calculator-especial-ops > button{
+    padding: 3vw;
+    font-size: 2vw;
+}
+
+.calculator-operators{
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-operators > button{
+    background-color: lightslategray;
+}
+
+.calculator-numbers > button{
+    background-color: lightsalmon;
 }
